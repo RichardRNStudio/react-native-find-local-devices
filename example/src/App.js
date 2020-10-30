@@ -3,10 +3,10 @@ import { StyleSheet, View, Text } from 'react-native';
 import FindLocalDevices from 'react-native-find-local-devices';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [result, setResult] = React.useState();
 
   React.useEffect(() => {
-    FindLocalDevices.multiply(3, 7).then(setResult);
+    FindLocalDevices.getLocalDevices(10).then((response) => console.log(response));
   }, []);
 
   return (

@@ -15,7 +15,7 @@ import FindLocalDevices from "react-native-find-local-devices";
 
 // ...
 
-const result = await FindLocalDevices.multiply(3, 7);
+const result = await FindLocalDevices.getLocalDevices(100);
 ```
 
 ## Contributing
