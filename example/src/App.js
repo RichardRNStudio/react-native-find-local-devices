@@ -3,10 +3,24 @@ import { StyleSheet, View, Text } from 'react-native';
 import FindLocalDevices from 'react-native-find-local-devices';
 
 export default function App() {
-  const [result, setResult] = React.useState();
+  const [result, setResult] = React.useState('');
 
   React.useEffect(() => {
-    FindLocalDevices.getLocalDevices(10).then((response) => console.log(response));
+    const ports = [
+      {
+        value: 50001,
+      },
+      {
+        value: 50002,
+      },
+      {
+        value: 50003,
+      },
+    ];
+    FindLocalDevices.getLocalDevices(
+      100,
+      JSON.stringify(ports)
+    ).then((response) => setResult(response));
   }, []);
 
   return (

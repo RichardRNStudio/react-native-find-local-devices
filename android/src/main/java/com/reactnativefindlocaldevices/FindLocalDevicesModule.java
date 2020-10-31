@@ -16,7 +16,9 @@ import java.util.ArrayList;
 import java.net.Socket;
 import java.net.InetSocketAddress;
 
+import com.google.gson.*;
 import com.reactnativefindlocaldevices.Device;
+import com.reactnativefindlocaldevices.Port;
 
 public class FindLocalDevicesModule extends ReactContextBaseJavaModule {
   private static ReactApplicationContext reactContext;
@@ -31,12 +33,14 @@ public class FindLocalDevicesModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void getLocalDevices(int timeout, Promise promise) {
-    this.startPingService(reactContext, timeout, promise);
+  public void getLocalDevices(int timeout, String ports, Promise promise) {
+    Gson gson = new Gson();
+    Port[] portList = gson.fromJson(ports, Port[].class);
+    this.startPingService(reactContext, timeout, portList, promise);
   }
 
   @ReactMethod
-  public void startPingService(ReactApplicationContext context, int timeout, Promise reactPromise)
+  public void startPingService(ReactApplicationContext context, int timeout, Port[] portList, Promise reactPromise)
   {
     Thread thread = new Thread(new Runnable() {
       List<Device> devices = new ArrayList<Device>();
@@ -50,15 +54,18 @@ public class FindLocalDevicesModule extends ReactContextBaseJavaModule {
           for (int i=1; i<255; i++) {
               String host = subnet + "." + i;
               if (InetAddress.getByName(host).isReachable(timeout)) {
-                if(socketIsAvailable(host, 50001, timeout)) {
-                  devices.add(new Device(host));
-                }
+                for(int j=0; j<portList.length; j++) {
+                  if(socketIsAvailable(host, portList[j].value, timeout)) {
+                    devices.add(new Device(host, portList[j].value));
+                  }
+                }                
               }
           }
           if(devices.size() == 0) {            
             reactPromise.resolve("NO_DEVICES");
           } else {
-            reactPromise.resolve(devices.toString());
+            Gson gson = new Gson();
+            reactPromise.resolve(gson.toJson(devices));
           }
         }
         catch(Exception e){
@@ -72,7 +79,7 @@ public class FindLocalDevicesModule extends ReactContextBaseJavaModule {
   private Boolean socketIsAvailable(String host, int port, int timeout) {
     Socket soc = new Socket();
     try {
-      InetSocketAddress socAddress = new InetSocketAddress(host, 50001);
+      InetSocketAddress socAddress = new InetSocketAddress(host, port);
       soc.connect(socAddress, timeout);
       return true;
     } catch(IOException e) {
