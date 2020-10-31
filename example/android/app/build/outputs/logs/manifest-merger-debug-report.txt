@@ -1,0 +1,254 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:1:1-29:12
+INJECTED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:1:1-29:12
+INJECTED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:1:1-29:12
+INJECTED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:1:1-29:12
+MERGED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:1:1-29:12
+MERGED from [com.facebook.flipper:flipper:0.33.1] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\e808313547416078114af989a9f4cd68\jetified-flipper-0.33.1\AndroidManifest.xml:8:1-18:12
+MERGED from [com.facebook.flipper:flipper-network-plugin:0.33.1] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\fa9d249d56579007dba70f8ee4dd5b3f\flipper-network-plugin-0.33.1\AndroidManifest.xml:8:1-15:12
+MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.33.1] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\5a1065d4748ae359265a740b2069d44b\flipper-fresco-plugin-0.33.1\AndroidManifest.xml:8:1-15:12
+MERGED from [:reactnativefindlocaldevices] C:\Prog\react-native-find-local-devices\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
+MERGED from [com.facebook.react:react-native:0.62.2] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\a3410e89a45a61749e1f179653a7579f\jetified-react-native-0.62.2\AndroidManifest.xml:2:1-13:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\055a171d10c43231a2795117ecd4c3fd\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [org.webkit:android-jsc:r245459] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\1ed26cdc1f47a6754ce1546799dd43a1\android-jsc-r245459\AndroidManifest.xml:2:1-11:12
+MERGED from [com.facebook.fresco:flipper:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\c180792e3f393fe4453d9c695595b3ef\flipper-2.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:stetho:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\14649b8b71802f359f24d4f29dd55d6b\stetho-2.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:fresco:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\83ef104dfb430f397d92e4759e916162\fresco-2.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\8547c58d8a189afcab5540191afe7320\imagepipeline-okhttp3-2.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:drawee:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\ee0a0f1df6ec82b39c6bd94672681bab\drawee-2.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:nativeimagefilters:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\fbdc3e33c0cf4fb6618b3fcc8d105591\nativeimagefilters-2.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\c3b7b12f448628b281d0d62b884cad68\imagepipeline-2.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\3b198830d922c7c36b5728d232b5dfa2\nativeimagetranscoder-2.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\8b504391aa72c1fccbfde5f9aecf364d\imagepipeline-base-2.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.8.2] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\a682a4f61b53a5eb0b34ff17728f4b20\soloader-0.8.2\AndroidManifest.xml:2:1-13:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\2b7e6ebaa515cd43f42fb356f0d1941c\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\3eb43dcc83336306d77ef63b3402a327\appcompat-resources-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\edab9a506dbd8c78a6f1a18fc4eb209e\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\3e974e7e51555c82be5b9fd468966b2b\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\b61b63ea7b0488553940d8a5bbdd3f9b\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\3d8e4bc7a6af7aacf11542b377d7496f\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\b95a670ae7bd376b7902e15855cd0ee3\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\b3384283a73b276daf1e9a12cf250bb7\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\a42cfa4562601129ccc7d984c26754fb\activity-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\e9872f4e302f432d4ed640cfa6c58eb6\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\f1fdfdf03c30563a3eb92f6c5b5051ce\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\4f509a65121478d6153615d7ef5b7c5f\core-1.1.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\a20a73fc01b18d3fde5e258f4cd5ad79\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\ee4a69f4f726969bc5c4f11a1f23bd91\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\e7c5bbbd3975418b74df0318d1b48a49\lifecycle-runtime-2.1.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\37c30db51a64ba69e51eccc8e298ccb5\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\b7d3a1583ae97d0e70a1770a1993bbf1\savedstate-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\21edf3c6b4f2eecf7b9eccd8e17daad5\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\ae802a55e74c19280a922e6de05f1e6e\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\2a1ee7c7818c2783ad723954444a3349\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.soloader:annotation:0.8.2] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\562a4d899b3a7a711a398f7636c8c187\annotation-0.8.2\AndroidManifest.xml:2:1-13:12
+MERGED from [com.facebook.fresco:fbcore:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\321a209f2d4834160037df3a6b3a866d\jetified-fbcore-2.0.0\AndroidManifest.xml:2:1-9:12
+INJECTED from C:\Prog\react-native-find-local-devices\example\android\app\src\debug\AndroidManifest.xml:2:1-11:12
+INJECTED from C:\Prog\react-native-find-local-devices\example\android\app\src\debug\AndroidManifest.xml:2:1-11:12
+INJECTED from C:\Prog\react-native-find-local-devices\example\android\app\src\debug\AndroidManifest.xml:2:1-11:12
+	package
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:2:3-52
+		INJECTED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:2:3-52
+		INJECTED from C:\Prog\react-native-find-local-devices\example\android\app\src\debug\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:1:1-29:12
+		INJECTED from C:\Prog\react-native-find-local-devices\example\android\app\src\debug\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\debug\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:1:1-29:12
+		INJECTED from C:\Prog\react-native-find-local-devices\example\android\app\src\debug\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:4:5-67
+MERGED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:4:5-67
+MERGED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:4:5-67
+MERGED from [com.facebook.flipper:flipper:0.33.1] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\e808313547416078114af989a9f4cd68\jetified-flipper-0.33.1\AndroidManifest.xml:15:5-67
+MERGED from [com.facebook.flipper:flipper:0.33.1] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\e808313547416078114af989a9f4cd68\jetified-flipper-0.33.1\AndroidManifest.xml:15:5-67
+MERGED from [:reactnativefindlocaldevices] C:\Prog\react-native-find-local-devices\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-67
+MERGED from [:reactnativefindlocaldevices] C:\Prog\react-native-find-local-devices\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:4:22-64
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:5:5-76
+MERGED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:5:5-76
+MERGED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:5:5-76
+MERGED from [com.facebook.flipper:flipper:0.33.1] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\e808313547416078114af989a9f4cd68\jetified-flipper-0.33.1\AndroidManifest.xml:16:5-76
+MERGED from [com.facebook.flipper:flipper:0.33.1] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\e808313547416078114af989a9f4cd68\jetified-flipper-0.33.1\AndroidManifest.xml:16:5-76
+MERGED from [:reactnativefindlocaldevices] C:\Prog\react-native-find-local-devices\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-76
+MERGED from [:reactnativefindlocaldevices] C:\Prog\react-native-find-local-devices\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-76
+	android:name
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:5:22-73
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:6:5-79
+MERGED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:6:5-79
+MERGED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:6:5-79
+MERGED from [:reactnativefindlocaldevices] C:\Prog\react-native-find-local-devices\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-79
+MERGED from [:reactnativefindlocaldevices] C:\Prog\react-native-find-local-devices\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-79
+	android:name
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:6:22-76
+application
+ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:8:5-27:19
+MERGED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:8:5-27:19
+MERGED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:8:5-27:19
+MERGED from [com.facebook.react:react-native:0.62.2] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\a3410e89a45a61749e1f179653a7579f\jetified-react-native-0.62.2\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.react:react-native:0.62.2] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\a3410e89a45a61749e1f179653a7579f\jetified-react-native-0.62.2\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.8.2] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\a682a4f61b53a5eb0b34ff17728f4b20\soloader-0.8.2\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.8.2] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\a682a4f61b53a5eb0b34ff17728f4b20\soloader-0.8.2\AndroidManifest.xml:11:5-20
+MERGED from [androidx.core:core:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\4f509a65121478d6153615d7ef5b7c5f\core-1.1.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\4f509a65121478d6153615d7ef5b7c5f\core-1.1.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\ee4a69f4f726969bc5c4f11a1f23bd91\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\ee4a69f4f726969bc5c4f11a1f23bd91\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+MERGED from [com.facebook.soloader:annotation:0.8.2] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\562a4d899b3a7a711a398f7636c8c187\annotation-0.8.2\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:annotation:0.8.2] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\562a4d899b3a7a711a398f7636c8c187\annotation-0.8.2\AndroidManifest.xml:11:5-20
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\4f509a65121478d6153615d7ef5b7c5f\core-1.1.0\AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:10:7-39
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:10:7-39
+	tools:ignore
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\debug\AndroidManifest.xml:10:75-114
+	android:roundIcon
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:12:7-52
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:12:7-52
+	tools:targetApi
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\debug\AndroidManifest.xml:10:54-74
+	android:icon
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:11:7-41
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:11:7-41
+	android:allowBackup
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:13:7-34
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:13:7-34
+	android:theme
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:14:7-38
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:14:7-38
+	android:usesCleartextTraffic
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\debug\AndroidManifest.xml:10:18-53
+	android:name
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:9:7-38
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:9:7-38
+activity#com.example.reactnativefindlocaldevices.MainActivity
+ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:15:7-25:18
+	android:label
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:17:9-41
+	android:launchMode
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:19:9-40
+	android:windowSoftInputMode
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:20:9-51
+	android:configChanges
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:18:9-86
+	android:name
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:16:9-37
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:21:9-24:25
+action#android.intent.action.MAIN
+ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:22:13-65
+	android:name
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:22:21-62
+category#android.intent.category.LAUNCHER
+ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:23:13-73
+	android:name
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:23:23-70
+activity#com.facebook.react.devsupport.DevSettingsActivity
+ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:26:7-84
+	android:name
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml:26:17-81
+uses-sdk
+INJECTED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml
+MERGED from [com.facebook.flipper:flipper:0.33.1] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\e808313547416078114af989a9f4cd68\jetified-flipper-0.33.1\AndroidManifest.xml:11:5-13:41
+MERGED from [com.facebook.flipper:flipper:0.33.1] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\e808313547416078114af989a9f4cd68\jetified-flipper-0.33.1\AndroidManifest.xml:11:5-13:41
+MERGED from [com.facebook.flipper:flipper-network-plugin:0.33.1] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\fa9d249d56579007dba70f8ee4dd5b3f\flipper-network-plugin-0.33.1\AndroidManifest.xml:11:5-13:41
+MERGED from [com.facebook.flipper:flipper-network-plugin:0.33.1] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\fa9d249d56579007dba70f8ee4dd5b3f\flipper-network-plugin-0.33.1\AndroidManifest.xml:11:5-13:41
+MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.33.1] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\5a1065d4748ae359265a740b2069d44b\flipper-fresco-plugin-0.33.1\AndroidManifest.xml:11:5-13:41
+MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.33.1] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\5a1065d4748ae359265a740b2069d44b\flipper-fresco-plugin-0.33.1\AndroidManifest.xml:11:5-13:41
+MERGED from [:reactnativefindlocaldevices] C:\Prog\react-native-find-local-devices\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:reactnativefindlocaldevices] C:\Prog\react-native-find-local-devices\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.62.2] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\a3410e89a45a61749e1f179653a7579f\jetified-react-native-0.62.2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.62.2] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\a3410e89a45a61749e1f179653a7579f\jetified-react-native-0.62.2\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\055a171d10c43231a2795117ecd4c3fd\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\055a171d10c43231a2795117ecd4c3fd\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [org.webkit:android-jsc:r245459] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\1ed26cdc1f47a6754ce1546799dd43a1\android-jsc-r245459\AndroidManifest.xml:7:5-9:41
+MERGED from [org.webkit:android-jsc:r245459] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\1ed26cdc1f47a6754ce1546799dd43a1\android-jsc-r245459\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.fresco:flipper:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\c180792e3f393fe4453d9c695595b3ef\flipper-2.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:flipper:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\c180792e3f393fe4453d9c695595b3ef\flipper-2.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:stetho:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\14649b8b71802f359f24d4f29dd55d6b\stetho-2.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:stetho:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\14649b8b71802f359f24d4f29dd55d6b\stetho-2.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\83ef104dfb430f397d92e4759e916162\fresco-2.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\83ef104dfb430f397d92e4759e916162\fresco-2.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\8547c58d8a189afcab5540191afe7320\imagepipeline-okhttp3-2.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\8547c58d8a189afcab5540191afe7320\imagepipeline-okhttp3-2.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\ee0a0f1df6ec82b39c6bd94672681bab\drawee-2.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\ee0a0f1df6ec82b39c6bd94672681bab\drawee-2.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagefilters:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\fbdc3e33c0cf4fb6618b3fcc8d105591\nativeimagefilters-2.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagefilters:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\fbdc3e33c0cf4fb6618b3fcc8d105591\nativeimagefilters-2.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\c3b7b12f448628b281d0d62b884cad68\imagepipeline-2.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\c3b7b12f448628b281d0d62b884cad68\imagepipeline-2.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\3b198830d922c7c36b5728d232b5dfa2\nativeimagetranscoder-2.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\3b198830d922c7c36b5728d232b5dfa2\nativeimagetranscoder-2.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\8b504391aa72c1fccbfde5f9aecf364d\imagepipeline-base-2.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\8b504391aa72c1fccbfde5f9aecf364d\imagepipeline-base-2.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.8.2] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\a682a4f61b53a5eb0b34ff17728f4b20\soloader-0.8.2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:soloader:0.8.2] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\a682a4f61b53a5eb0b34ff17728f4b20\soloader-0.8.2\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\2b7e6ebaa515cd43f42fb356f0d1941c\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\2b7e6ebaa515cd43f42fb356f0d1941c\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\3eb43dcc83336306d77ef63b3402a327\appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\3eb43dcc83336306d77ef63b3402a327\appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\edab9a506dbd8c78a6f1a18fc4eb209e\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\edab9a506dbd8c78a6f1a18fc4eb209e\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\3e974e7e51555c82be5b9fd468966b2b\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\3e974e7e51555c82be5b9fd468966b2b\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\b61b63ea7b0488553940d8a5bbdd3f9b\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\b61b63ea7b0488553940d8a5bbdd3f9b\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\3d8e4bc7a6af7aacf11542b377d7496f\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\3d8e4bc7a6af7aacf11542b377d7496f\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\b95a670ae7bd376b7902e15855cd0ee3\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\b95a670ae7bd376b7902e15855cd0ee3\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\b3384283a73b276daf1e9a12cf250bb7\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\b3384283a73b276daf1e9a12cf250bb7\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\a42cfa4562601129ccc7d984c26754fb\activity-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\a42cfa4562601129ccc7d984c26754fb\activity-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\e9872f4e302f432d4ed640cfa6c58eb6\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\e9872f4e302f432d4ed640cfa6c58eb6\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\f1fdfdf03c30563a3eb92f6c5b5051ce\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\f1fdfdf03c30563a3eb92f6c5b5051ce\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\4f509a65121478d6153615d7ef5b7c5f\core-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\4f509a65121478d6153615d7ef5b7c5f\core-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\a20a73fc01b18d3fde5e258f4cd5ad79\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\a20a73fc01b18d3fde5e258f4cd5ad79\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\ee4a69f4f726969bc5c4f11a1f23bd91\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\ee4a69f4f726969bc5c4f11a1f23bd91\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\e7c5bbbd3975418b74df0318d1b48a49\lifecycle-runtime-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\e7c5bbbd3975418b74df0318d1b48a49\lifecycle-runtime-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\37c30db51a64ba69e51eccc8e298ccb5\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\37c30db51a64ba69e51eccc8e298ccb5\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\b7d3a1583ae97d0e70a1770a1993bbf1\savedstate-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\b7d3a1583ae97d0e70a1770a1993bbf1\savedstate-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\21edf3c6b4f2eecf7b9eccd8e17daad5\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\21edf3c6b4f2eecf7b9eccd8e17daad5\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\ae802a55e74c19280a922e6de05f1e6e\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\ae802a55e74c19280a922e6de05f1e6e\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\2a1ee7c7818c2783ad723954444a3349\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\2a1ee7c7818c2783ad723954444a3349\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.soloader:annotation:0.8.2] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\562a4d899b3a7a711a398f7636c8c187\annotation-0.8.2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:annotation:0.8.2] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\562a4d899b3a7a711a398f7636c8c187\annotation-0.8.2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.fresco:fbcore:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\321a209f2d4834160037df3a6b3a866d\jetified-fbcore-2.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:2.0.0] C:\Users\Richard\.gradle\caches\transforms-2\files-2.1\321a209f2d4834160037df3a6b3a866d\jetified-fbcore-2.0.0\AndroidManifest.xml:5:5-7:41
+INJECTED from C:\Prog\react-native-find-local-devices\example\android\app\src\debug\AndroidManifest.xml
+INJECTED from C:\Prog\react-native-find-local-devices\example\android\app\src\debug\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Prog\react-native-find-local-devices\example\android\app\src\debug\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Prog\react-native-find-local-devices\example\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Prog\react-native-find-local-devices\example\android\app\src\debug\AndroidManifest.xml
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\debug\AndroidManifest.xml:5:5-77
+	android:name
+		ADDED from C:\Prog\react-native-find-local-devices\example\android\app\src\debug\AndroidManifest.xml:5:22-75
