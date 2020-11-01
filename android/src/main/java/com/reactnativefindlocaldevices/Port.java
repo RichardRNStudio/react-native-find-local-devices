@@ -1,8 +1,9 @@
 package com.reactnativefindlocaldevices;
-public class Port {
-    public Integer value;
 
-    public void setValue(Integer port) {
+public class Port {
+    public int value;
+
+    public void setValue(int port) {
         this.value = port;
     }
 }

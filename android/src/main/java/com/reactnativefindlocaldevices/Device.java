@@ -8,4 +8,8 @@ public class Device {
         this.IpAddress = ip;
         this.Port = port;
     }
+
+    public Device(String ip) {
+        this.IpAddress = ip;
+    }
 }

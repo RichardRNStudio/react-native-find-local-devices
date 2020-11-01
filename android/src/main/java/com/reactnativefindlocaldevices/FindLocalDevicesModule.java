@@ -39,7 +39,6 @@ public class FindLocalDevicesModule extends ReactContextBaseJavaModule {
     this.startPingService(reactContext, timeout, portList, promise);
   }
 
-  @ReactMethod
   public void startPingService(ReactApplicationContext context, int timeout, Port[] portList, Promise reactPromise)
   {
     Thread thread = new Thread(new Runnable() {
@@ -54,11 +53,15 @@ public class FindLocalDevicesModule extends ReactContextBaseJavaModule {
           for (int i=1; i<255; i++) {
               String host = subnet + "." + i;
               if (InetAddress.getByName(host).isReachable(timeout)) {
-                for(int j=0; j<portList.length; j++) {
-                  if(socketIsAvailable(host, portList[j].value, timeout)) {
-                    devices.add(new Device(host, portList[j].value));
-                  }
-                }                
+                if(portList.length > 0) {
+                  for(int j=0; j<portList.length; j++) {
+                    if(socketIsAvailable(host, portList[j].value, timeout)) {
+                      devices.add(new Device(host, portList[j].value));
+                    }
+                  }          
+                } else {
+                  devices.add(new Device(host));
+                }
               }
           }
           if(devices.size() == 0) {            
@@ -69,7 +72,7 @@ public class FindLocalDevicesModule extends ReactContextBaseJavaModule {
           }
         }
         catch(Exception e){
-          reactPromise.resolve(e.getMessage());
+          reactPromise.reject(e.getMessage());
         }
       }
     });
@@ -101,7 +104,6 @@ public class FindLocalDevicesModule extends ReactContextBaseJavaModule {
               (address & 0xff),
               (address >> 8 & 0xff),
               (address >> 16 & 0xff));
-
       return ipString;
   }
 }
