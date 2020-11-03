@@ -1,6 +1,6 @@
 {
   "name": "react-native-find-local-devices",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "description": "It can be helpful when you try to get a list of your local devices over WiFi.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -27,7 +27,8 @@
     "release": "release-it",
     "example": "yarn --cwd example",
     "pods": "cd example && pod-install --quiet",
-    "bootstrap": "yarn example && yarn && yarn pods"
+    "bootstrap": "yarn example && yarn && yarn pods",
+    "clean": "cd android && gradlew clean && cd .."
   },
   "keywords": [
     "react-native",
@@ -71,17 +72,6 @@
     "modulePathIgnorePatterns": [
       "<rootDir>/example/node_modules",
       "<rootDir>/lib/"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "yarn lint && yarn typescript"
-    }
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
     ]
   },
   "release-it": {
