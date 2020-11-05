@@ -1,52 +1,51 @@
 # react-native-find-local-devices
 
-PLEASE NOTICE THIS PACKAGE IS A BETA VERSION.
-
-It can be helpful when you try to get a list of your local devices over WiFi when the devices include at least one socket connection.
-This package allow you detect all devices on your local network by socket connections.
-
-The results will be available in the following format:
-"[{IpAddress: "192.168.1.40", Port: 84}, {IpAddress: "192.168.1.45", Port: 86}]".
-
-As you can see you need to parse this json to an array on react native side.
-
-You can add an array of ports, the package will check them by socket connection and return the ip adresses which has a succesfull connection.
-
-If the package doesn't find any devices, then you'll get the following message: "NO_DEVICES".
+It can be helpful when you try to get a list of your local devices over WiFi when the devices includes at least one websocket connection.
+This package allows you detect all devices over your local network with websocket connection.
+You've to add a timeout and an array of ports. The package will try create a connection with those ports and return the ip adresses which have successful connection.
+If the package doesn't find any devices, then you'll get the following message: "no_devices".
 See the example: https://github.com/RichardRNStudio/react-native-local-devices/example
 
-It doesn't works under IOS yet.
+NOTICE: It doesn't works under IOS yet. If you can help me in this case please contact me on the following email: info@rnstudio.hu
 
 ## Installation
 
 ```sh
-npm install react-native-find-local-devices
+npm install react-native-find-local-devices --save
 ```
 
 ## Usage
 
 ```js
 import FindLocalDevices from 'react-native-find-local-devices';
+import { DeviceEventEmitter } from 'react-native';
 
 // ...
-
-const ports = [
-  // optional, when you add some ports, the package will check them by socket connection
-  {
-    value: 120,
-  },
-  {
-    value: 80,
-  },
-];
-
-FindLocalDevices.getLocalDevices(20, JSON.stringify(ports))
-  .then((response) => {
-    const devices = JSON.parse(response); // you will have the response as a string so you've to parse that
-  })
-  .catch((e) => {
-    console.log(e);
+  DeviceEventEmitter.addListener('new_device_found', (device) => {
+    console.log('newDevice_found', d);
+    console.log(device.ipAddress); // for example: 192.168.1.12
+    console.log(device.port); // that port which has been a successful connection from your list
   });
+
+  DeviceEventEmitter.addListener('connection_error', () => {
+    console.log('connection_error');
+  });
+
+  DeviceEventEmitter.addListener('no_devices', () => {
+    console.log('no_devices');
+  });
+
+  DeviceEventEmitter.addListener('no_ports', () => {
+    console.log('no_ports');
+  });
+
+  const getLocalDevices = () => {
+    FindLocalDevices.getLocalDevices({
+      timeout: 10,
+      ports: [80, 3004],
+    });
+  };
+// ...
 ```
 
 ## Contributing
