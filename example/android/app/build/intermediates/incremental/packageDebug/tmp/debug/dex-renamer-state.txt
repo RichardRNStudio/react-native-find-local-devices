@@ -1,4 +1,0 @@
-#Sat Oct 31 18:42:49 CET 2020
-base.0=C\:\\Prog\\react-native-find-local-devices\\example\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
