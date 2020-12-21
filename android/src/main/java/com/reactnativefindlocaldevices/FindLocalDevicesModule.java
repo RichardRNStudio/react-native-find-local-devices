@@ -30,6 +30,7 @@ public class FindLocalDevicesModule extends ReactContextBaseJavaModule {
   private final String connection_error = "connection_error";
   private final String no_devices = "no_devices";
   private final String no_ports = "no_ports";
+  private final String error = "error";
 
   FindLocalDevicesModule(ReactApplicationContext context) {
     super(context);
@@ -43,18 +44,22 @@ public class FindLocalDevicesModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void getLocalDevices(ReadableMap params) {
     int timeout;
-    if (params.hasKey("reconnect")) {
+    if (params.hasKey("timeout")) {
       timeout = params.getInt("timeout");
     } else {
       timeout = 20;
     }
-    ReadableArray ports = params.getArray("ports");
-    if(ports.size() == 0) {
-      WritableMap eventParams = Arguments.createMap();
-      sendEvent(no_ports, eventParams);
-    } else {
-      startPingService(timeout, ports);
-    }
+    // if (params.hasKey("ports")) {
+    //   ReadableArray ports = params.getArray("ports");
+    //   if(ports.size() == 0) {
+    //     WritableMap eventParams = Arguments.createMap();
+    //     sendEvent(no_ports, eventParams);
+    //   } else {
+    //     startPingService(timeout, ports);
+    //   }
+    // } else {
+      discoverLocalDevices(timeout);
+    // }
   }
 
   private void startPingService(int timeout, @Nullable ReadableArray ports)
@@ -71,13 +76,20 @@ public class FindLocalDevicesModule extends ReactContextBaseJavaModule {
             for(int j=0; j<ports.size(); j++) {
               for (int i=1; i<255; i++) {
                 String host = subnet + "." + i;
-                if(socketIsAvailable(host, ports.getInt(j), timeout)) {
-                  WritableMap eventParams = Arguments.createMap();
-                  eventParams.putString("ipAddress", host);
-                  eventParams.putInt("port", ports.getInt(j));
-                  devices.add(new Device(host, ports.getInt(j)));
-                  sendEvent(new_device_found, eventParams);
-                }   
+                InetAddress address = InetAddress.getByName(host);
+                boolean reachable = address.isReachable(1000);
+                if(reachable) {
+                    WritableMap eventParams = Arguments.createMap();
+                    eventParams.putString("ipAddress", host);
+                    sendEvent("reached", eventParams);
+                }
+                // if(socketIsAvailable(host, ports.getInt(j), timeout)) {
+                //   WritableMap eventParams = Arguments.createMap();
+                //   eventParams.putString("ipAddress", host);
+                //   eventParams.putInt("port", ports.getInt(j));
+                //   devices.add(new Device(host, ports.getInt(j)));
+                //   sendEvent(new_device_found, eventParams);
+                // }   
               }  
             }      
             if(devices.size() == 0) {
@@ -126,5 +138,43 @@ public class FindLocalDevicesModule extends ReactContextBaseJavaModule {
 
   private void sendEvent(String eventName, @Nullable WritableMap params) {
     reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName, params);
+  }
+
+  private void discoverLocalDevices(int timeout)
+  {
+    ArrayList<Device> devices = new ArrayList<Device>();
+    new Thread(new Runnable() {
+      @Override
+      public void run() {
+        try {
+          WifiManager mWifiManager = (WifiManager) reactContext.getSystemService(Context.WIFI_SERVICE);
+          WifiInfo mWifiInfo = mWifiManager.getConnectionInfo();
+          String subnet = getSubnetAddress(mWifiManager.getDhcpInfo().gateway);
+          for (int i=1; i<255; i++) {
+            String host = subnet + "." + i;
+            InetAddress address = InetAddress.getByName(host);
+            boolean reachable = address.isReachable(timeout);
+            if(reachable) {
+              devices.add(new Device(host));                
+            }
+          }  
+          if(devices.size() > 0) {
+            WritableMap eventParams = Arguments.createMap();
+            for(int i=1; i<devices.size(); i++) {
+              eventParams.putString("ipAddress", devices.get(i).IpAddress);
+            }
+            sendEvent("reached", eventParams);
+          }
+          if(devices.size() == 0) {
+            WritableMap eventParams = Arguments.createMap();
+            sendEvent(no_devices, eventParams);
+          }
+        }
+        catch(Exception e){
+          WritableMap eventParams = Arguments.createMap();
+          sendEvent(error, eventParams);
+        }
+      }
+    }).start();
   }
 }
