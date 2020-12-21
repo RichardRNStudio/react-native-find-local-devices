@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   View,
@@ -10,38 +10,75 @@ import {
 import FindLocalDevices from 'react-native-find-local-devices';
 
 export default function App() {
+  const [results, setResults] = useState<string[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
+  const [errorMsg, setErrorMsg] = useState<string>('');
 
-  DeviceEventEmitter.addListener('new_device_found', (device) => {
-    console.log('newDevice_found', device);
-  });
+  // DeviceEventEmitter.addListener('new_device_found', (device) => {
+  //   setResults([...results, device]);
+    // setLoading(false);
+  // });
 
   DeviceEventEmitter.addListener('connection_error', () => {
-    console.log('connection_error');
+    setError(true);
+    setErrorMsg('connection_error');
+    setLoading(false);
   });
 
   DeviceEventEmitter.addListener('no_devices', () => {
-    console.log('no_devices');
+    setError(true);
+    setErrorMsg('no_devices');
+    setLoading(false);
   });
 
   DeviceEventEmitter.addListener('no_ports', () => {
-    console.log('no_ports');
+    setError(true);
+    setErrorMsg('no_ports');
+    setLoading(false);
+  });
+
+  DeviceEventEmitter.addListener('error', () => {
+    setError(true);
+    setErrorMsg('unknown_error');
+    setLoading(false);
+  });
+
+  DeviceEventEmitter.addListener('reached', (device) => {
+    console.log(device);
+    setResults([...results, device]);
+    setLoading(false);
   });
 
   const getLocalDevices = () => {
+    setError(false);
+    setErrorMsg('');
+    setResults([]);
+    setLoading(true);
     FindLocalDevices.getLocalDevices({
-      timeout: 10,
-      ports: [50001, 50002, 50003],
+      timeout: 15
     });
   };
 
   return (
     <View style={styles.container}>
-      <Text>See the results on your console!</Text>
-      <Button
-        title={'Get local devices'}
-        color={'steelblue'}
-        onPress={() => getLocalDevices()}
-      />
+      {!loading ? (
+        <View>
+        {/* {results && results.length > 0 && (
+          results.map(result => {
+            return <Text>{result.toString()}</Text>
+          })
+        )} */}
+        {error && <Text>{errorMsg}</Text>}
+        <Button
+          title={'Get local devices'}
+          color={'steelblue'}
+          onPress={() => getLocalDevices()}
+        />
+        </View>
+      ) : (
+        <Text>Loading...</Text>
+      )}
     </View>
   );
 }
