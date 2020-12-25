@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   View,
   Text,
   Button,
-  Dimensions,
   DeviceEventEmitter,
 } from 'react-native';
 import Device from './Device';
