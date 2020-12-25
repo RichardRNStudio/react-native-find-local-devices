@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   StyleSheet,
   View,
@@ -7,77 +7,99 @@ import {
   Dimensions,
   DeviceEventEmitter,
 } from 'react-native';
+import Device from './Device';
 import FindLocalDevices from 'react-native-find-local-devices';
 
 export default function App() {
-  const [results, setResults] = useState<string[]>([]);
+  const [results, setResults] = useState<Device[]>([]);
+  const [checkingDevice, setCheckingDevice] = useState<Device>();
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [errorMsg, setErrorMsg] = useState<string>('');
 
-  // DeviceEventEmitter.addListener('new_device_found', (device) => {
-  //   setResults([...results, device]);
-    // setLoading(false);
-  // });
-
-  DeviceEventEmitter.addListener('connection_error', () => {
-    setError(true);
-    setErrorMsg('connection_error');
-    setLoading(false);
-  });
-
-  DeviceEventEmitter.addListener('no_devices', () => {
-    setError(true);
-    setErrorMsg('no_devices');
-    setLoading(false);
-  });
-
-  DeviceEventEmitter.addListener('no_ports', () => {
-    setError(true);
-    setErrorMsg('no_ports');
-    setLoading(false);
-  });
-
-  DeviceEventEmitter.addListener('error', () => {
-    setError(true);
-    setErrorMsg('unknown_error');
-    setLoading(false);
-  });
-
-  DeviceEventEmitter.addListener('reached', (device) => {
-    console.log(device);
-    setResults([...results, device]);
-    setLoading(false);
-  });
-
-  const getLocalDevices = () => {
+  const setDefault = () => {
+    DeviceEventEmitter.removeAllListeners();
+    setCheckingDevice(undefined);
     setError(false);
     setErrorMsg('');
     setResults([]);
+    setLoading(false);
+  };
+
+  const getLocalDevices = () => {   
+    setDefault();
     setLoading(true);
-    FindLocalDevices.getLocalDevices({
-      timeout: 15
+    DeviceEventEmitter.addListener('NEW_DEVICE_FOUND', (device) => {
+      console.log(`NEW DEVICE FOUND: ${device.ipAddress}:${device.port}`);
     });
+
+    DeviceEventEmitter.addListener('RESULTS', (devices) => {
+      setResults(devices);
+      setLoading(false);
+    });
+
+    DeviceEventEmitter.addListener('CHECK', (device) => {
+      setCheckingDevice(device);
+    });
+
+    DeviceEventEmitter.addListener('NO_DEVICES', () => {
+      setResults([]);
+      setError(true);
+      setErrorMsg('No devices found.');
+      setLoading(false);
+    });
+
+    DeviceEventEmitter.addListener('NO_PORTS', () => {
+      setError(true);
+      setErrorMsg('You did not pass any ports.');
+      setLoading(false);
+    });
+  
+    FindLocalDevices.getLocalDevices({
+      ports: [50001, 50002, 50003],
+      timeout: 40
+    });
+  };
+
+  const cancelDiscovering = () => {    
+    FindLocalDevices.cancelDiscovering();
+    setDefault();
   };
 
   return (
     <View style={styles.container}>
       {!loading ? (
         <View>
-        {/* {results && results.length > 0 && (
-          results.map(result => {
-            return <Text>{result.toString()}</Text>
-          })
-        )} */}
         {error && <Text>{errorMsg}</Text>}
         <Button
-          title={'Get local devices'}
+          title={'Discover devices'}
           color={'steelblue'}
           onPress={() => getLocalDevices()}
         />
         </View>
       ) : (
-        <Text>Loading...</Text>
+        <View>
+          <Text>Discover devices...</Text>          
+          {checkingDevice && (
+            <Text>{checkingDevice.ipAddress}:{checkingDevice.port}</Text>
+          )}
+          <Button
+            title={'Cancel discovering'}
+            color={'red'}
+            onPress={() => cancelDiscovering()}
+          />
+        </View>
+      )}
+      {!loading && results && results.length > 0 && (
+        <View style={styles.itemList}>
+          {results.map((result, index) => {
+            return (
+              <View style={styles.item}>
+                <Text key={index}>{result.ipAddress}:{result.port}</Text>
+              </View>
+            );
+          })}
+        </View>        
       )}
     </View>
   );
@@ -85,12 +107,21 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: 30,
+  },
+  itemList: {
+    marginTop: 50,
     flex: 1,
     flexDirection: 'column',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    justifyContent: 'space-around',
-    height: Dimensions.get('screen').height * 0.5,
-    maxHeight: Dimensions.get('screen').height * 0.5,
-    textAlign: 'center',
   },
+  item: {
+    marginTop: 20,
+    flex: 1,
+  },
+  itemTitle: {
+    flex: 1,
+    fontWeight: 'bold',
+  }
 });
