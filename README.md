@@ -20,31 +20,37 @@ npm install react-native-find-local-devices --save
 import FindLocalDevices from 'react-native-find-local-devices';
 import { DeviceEventEmitter } from 'react-native';
 
+// Don't forget to call DeviceEventEmitter.removeAllListeners() when discovering isn't running. 
+// See the example folder for an advanced example.
 // ...
-  DeviceEventEmitter.addListener('new_device_found', (device) => {
-    console.log('newDevice_found', d);
-    console.log(device.ipAddress); // for example: 192.168.1.12
-    console.log(device.port); // that port which has been a successful connection from your list
+ DeviceEventEmitter.addListener('NEW_DEVICE_FOUND', (device) => {
+    console.log(`NEW DEVICE FOUND: ${device.ipAddress}:${device.port}`);
+    // This listener will be activated in that moment when the device has been found.
+    // FORMAT: {ipAddress: "192.168.1.12", port: 70}
   });
 
-  DeviceEventEmitter.addListener('connection_error', () => {
-    console.log('connection_error');
+  DeviceEventEmitter.addListener('RESULTS', (devices) => {
+    // ALL OF RESULTS when discovering has been finished.
+    // FORMAT: [{ipAddress: "192.168.1.12", port: 70}, {ipAddress: "192.168.1.13", port: 75}]
   });
 
-  DeviceEventEmitter.addListener('no_devices', () => {
-    console.log('no_devices');
+  DeviceEventEmitter.addListener('CHECK', (device) => {
+    // This listener will be activated in that moment when package checking a device.
+    // FORMAT: {ipAddress: "192.168.1.2", port: 70}
   });
 
-  DeviceEventEmitter.addListener('no_ports', () => {
-    console.log('no_ports');
+  DeviceEventEmitter.addListener('NO_DEVICES', () => {
+    // This listener will be activated at the end of discovering.
   });
 
-  const getLocalDevices = () => {
-    FindLocalDevices.getLocalDevices({
-      timeout: 10,
-      ports: [80, 3004],
-    });
-  };
+  DeviceEventEmitter.addListener('NO_PORTS', () => {
+    // This listener will be activated if you don't pass any ports to the package.
+  });
+
+  FindLocalDevices.getLocalDevices({
+    ports: [70, 85, 1200],
+    timeout: 40
+  });
 // ...
 ```
 
