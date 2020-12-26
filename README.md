@@ -3,7 +3,7 @@
 <p>It can be helpful when you try to get a list of your local devices over WiFi when the devices includes at least one websocket connection.</p>
 <p>This package allows you detect all devices over your local network with websocket connection.</p>
 <p>You've to add a timeout and an array of ports as parameters. The package will try to create a connection with those ports and return the ip adresses which have successful connection.</p>
-<p>See the example: <a href=" https://github.com/RichardRNStudio/react-native-local-devices/example">https://github.com/RichardRNStudio/react-native-local-devices/example</a></p>
+<p>See the example: <a href="https://github.com/RichardRNStudio/react-native-find-local-devices/tree/main/example">https://github.com/RichardRNStudio/react-native-find-local-devices/tree/main/example</a></p>
 <p>NOTICE: It doesn't work under IOS yet. If you can help me in this case please contact me on the following email: info@rnstudio.hu</p>
 <p><i>This package has been written for the PC Controller react-native application as a submodule.</i></p>
   <a href="https://pccontroller.rnstudio.hu">Visit the PC Controller website</a>
