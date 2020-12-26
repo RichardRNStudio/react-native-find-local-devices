@@ -19,6 +19,7 @@ npm install react-native-find-local-devices --save
 <h2>Running the example project<h2>
 <p>Inside the example folder run the following command: (it requires a real device with Wi-Fi connection)</p>
 
+
 ```sh
 npm run android
 ```
