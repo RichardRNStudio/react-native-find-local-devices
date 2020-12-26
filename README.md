@@ -4,7 +4,7 @@
 <p>This package allows you detect all devices over your local network with websocket connection.</p>
 <p>You've to add a timeout and an array of ports as parameters. The package will try to create a connection with those ports and return the ip adresses which have successful connection.</p>
 <p>See the example: <a href=" https://github.com/RichardRNStudio/react-native-local-devices/example">https://github.com/RichardRNStudio/react-native-local-devices/example</a></p>
-<p>NOTICE: It doesn't works under IOS yet. If you can help me in this case please contact me on the following email: info@rnstudio.hu</p>
+<p>NOTICE: It doesn't work under IOS yet. If you can help me in this case please contact me on the following email: info@rnstudio.hu</p>
 <p><i>This package has been written for the PC Controller react-native application as a submodule.</i></p>
   <a href="https://pccontroller.rnstudio.hu">Visit the PC Controller website</a>
 </p>
@@ -56,10 +56,14 @@ import { DeviceEventEmitter } from 'react-native';
     // This listener will be activated if you don't pass any ports to the package.
   });
 
+  // Getting local devices which have active socket server on the following ports:
   FindLocalDevices.getLocalDevices({
     ports: [70, 85, 1200],
     timeout: 40
   });
+
+  // When the discovering is running, you can cancel that with the following function:
+  FindLocalDevices.cancelDiscovering();
 // ...
 ```
 
