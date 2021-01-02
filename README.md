@@ -4,7 +4,7 @@
 ![platform](https://github.com/RichardRNStudio/react-native-find-local-devices/blob/main/docs/platform.svg?raw=true)
 ![license](https://github.com/RichardRNStudio/react-native-find-local-devices/blob/main/docs/license.svg?raw=true)
 
-![example](https://github.com/RichardRNStudio/react-native-find-local-devices/blob/main/docs/android.gif?raw=true)
+![example](https://github.com/RichardRNStudio/react-native-find-local-devices/blob/main/docs/android-example.gif?raw=true)
 
 <blockquote>
 <p>It can be helpful when you try to get a list of your local devices over WiFi when the devices includes at least one websocket connection.</p>
