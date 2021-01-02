@@ -31,7 +31,7 @@
     "bootstrap": "yarn example && yarn && yarn pods",
     "clean": "cd android && gradlew clean && cd ..",
     "example:android": "cd example && react-native run-android",
-    "badge:npm": "badge \"npm package\" 1.3.1 :brightgreen > docs/npm.svg",
+    "badge:npm": "badge \"npm package\" 1.3.1 :brightgreen > docs/npm-version.svg",
     "badge:platform": "badge platform android :yellow > docs/platform.svg",
     "badge:license": "badge license MIT :green > docs/license.svg"
   },

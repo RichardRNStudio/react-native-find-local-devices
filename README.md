@@ -1,6 +1,6 @@
 <h1>🚀 react-native-find-local-devices</h1>
 
-![npm version](https://github.com/RichardRNStudio/react-native-find-local-devices/blob/main/docs/npm.svg?raw=true)
+![npm version](https://github.com/RichardRNStudio/react-native-find-local-devices/blob/main/docs/npm-version.svg?raw=true)
 ![platform](https://github.com/RichardRNStudio/react-native-find-local-devices/blob/main/docs/platform.svg?raw=true)
 ![license](https://github.com/RichardRNStudio/react-native-find-local-devices/blob/main/docs/license.svg?raw=true)
 
