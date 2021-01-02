@@ -38,7 +38,8 @@ import { DeviceEventEmitter } from 'react-native';
 
 // Don't forget to call DeviceEventEmitter.removeAllListeners() when discovering isn't running. 
 // WARNING: DeviceEventEmitter.removeAllListeners will remove all of your listeners. 
-// See the example folder. There is an advanced example how you can create and remove listeners independent of any other listeners.
+// See the example folder. There is an advanced example how you can create 
+// and remove listeners independent of any other listeners.
 // MAIN BEHAVIOUR: 
 // ...
   DeviceEventEmitter.addListener('NEW_DEVICE_FOUND', (device) => {
