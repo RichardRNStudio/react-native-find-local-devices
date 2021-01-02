@@ -129,6 +129,8 @@ public class FindLocalDevicesModule extends ReactContextBaseJavaModule {
       soc.close();
       return true;
     } catch(IOException error) {
+      Error socketError = new Error(error.getMessage());
+      sendMapEvent(CONNECTION_ERROR, socketError.mapToWritableMap());
       error.printStackTrace();
       try {
         soc.close();

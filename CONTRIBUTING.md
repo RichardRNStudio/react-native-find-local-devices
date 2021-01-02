@@ -21,7 +21,7 @@ yarn example start
 To run the example app on Android:
 
 ```sh
-yarn example android
+yarn example:android
 ```
 
 To run the example app on iOS:
@@ -40,7 +40,7 @@ yarn lint
 To fix formatting errors, run the following:
 
 ```sh
-yarn lint --fix
+yarn lint:fix
 ```
 
 Remember to add tests for your change if possible. Run the unit tests by:
@@ -83,7 +83,7 @@ The `package.json` file contains various scripts for common tasks:
 - `yarn lint`: lint files with ESLint.
 - `yarn test`: run unit tests with Jest.
 - `yarn example start`: start the Metro server for the example app.
-- `yarn example android`: run the example app on Android.
+- `yarn example:android`: run the example app on Android.
 - `yarn example ios`: run the example app on iOS.
 
 ### Sending a pull request
