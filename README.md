@@ -36,7 +36,7 @@ npm run example:android
 import FindLocalDevices from 'react-native-find-local-devices';
 import { DeviceEventEmitter } from 'react-native';
 
-// Don't forget to call DeviceEventEmitter.removeAllListeners() when discovering isn't running. 
+// Don't forget to call DeviceEventEmitter.removeAllListeners() when discovering isn't running.
 // WARNING: DeviceEventEmitter.removeAllListeners will remove all of your listeners. 
 // See the example folder. There is an advanced example how you can create 
 // and remove listeners independent of any other listeners.
