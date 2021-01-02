@@ -30,7 +30,10 @@
     "pods": "cd example && pod-install --quiet",
     "bootstrap": "yarn example && yarn && yarn pods",
     "clean": "cd android && gradlew clean && cd ..",
-    "example:android": "cd example && react-native run-android"
+    "example:android": "cd example && react-native run-android",
+    "badge:npm": "badge \"npm package\" 1.4.0 :brightgreen > docs/npm.svg",
+    "badge:platform": "badge platform android :yellow > docs/platform.svg",
+    "badge:license": "badge license MIT :yellow > docs/license.svg"
   },
   "keywords": [
     "react-native",
