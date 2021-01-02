@@ -1,6 +1,6 @@
 <h1>🚀 react-native-find-local-devices</h1>
 
-[![npm version](https://github.com/RichardRNStudio/react-native-find-local-devices/tree/main/docs/npm.svg?raw=true)][![platform](https://github.com/RichardRNStudio/react-native-find-local-devices/tree/main/docs/platform.svg?raw=true)][![license](https://github.com/RichardRNStudio/react-native-find-local-devices/tree/main/docs/license.svg?raw=true)]
+[![npm version](https://github.com/RichardRNStudio/react-native-find-local-devices/blob/main/docs/npm.svg?raw=true)][![platform](https://github.com/RichardRNStudio/react-native-find-local-devices/blob/main/docs/platform.svg?raw=true)][![license](https://github.com/RichardRNStudio/react-native-find-local-devices/blob/main/docs/license.svg?raw=true)]
 
 <blockquote>
 <p>It can be helpful when you try to get a list of your local devices over WiFi when the devices includes at least one websocket connection.</p>
