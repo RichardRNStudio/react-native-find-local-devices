@@ -33,7 +33,7 @@
     "example:android": "cd example && react-native run-android",
     "badge:npm": "badge \"npm package\" 1.4.0 :brightgreen > docs/npm.svg",
     "badge:platform": "badge platform android :yellow > docs/platform.svg",
-    "badge:license": "badge license MIT :yellow > docs/license.svg"
+    "badge:license": "badge license MIT :green > docs/license.svg"
   },
   "keywords": [
     "react-native",
