@@ -30,7 +30,7 @@
     "pods": "cd example && pod-install --quiet",
     "bootstrap": "yarn example && yarn && yarn pods",
     "clean": "cd android && gradlew clean && cd ..",
-    "example:android": "cd example && react-native run-android",
+    "example:android": "cd example && react-native run-android"
   },
   "keywords": [
     "react-native",

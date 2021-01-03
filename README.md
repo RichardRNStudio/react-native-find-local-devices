@@ -1,6 +1,6 @@
 <h1>🚀 react-native-find-local-devices</h1>
 
-![npm version](https://img.shields.io/badge/npm-1.3.2-brightgreen)
+![npm version](https://img.shields.io/badge/npm-1.3.3-brightgreen)
 ![platform](https://img.shields.io/badge/platform-android-yellow)
 ![license](https://img.shields.io/badge/license-MIT-yellow)
 
