@@ -40,7 +40,7 @@
     "local-network"
   ],
   "repository": "https://github.com/RichardRNStudio/react-native-local-devices",
-  "author": "Nagy Richárd <riiichj@gmail.com> (https://github.com/RichardRNStudio)",
+  "author": "Richárd Nagy <info@rnstudio.hu> (https://github.com/RichardRNStudio)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/RichardRNStudio/react-native-local-devices/issues"
