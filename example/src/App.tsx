@@ -14,7 +14,7 @@ export default function App() {
 
   useEffect(() => {
     setResults([...results, newDevice]);
-  }, [newDevice]);
+  }, [newDevice, results]);
 
   const setDefault = () => {
     setCheckingDevice(undefined);
