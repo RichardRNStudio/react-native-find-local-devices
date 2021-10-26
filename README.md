@@ -35,69 +35,29 @@ npm run example:android
 
 ```js
 import FindLocalDevices from 'react-native-find-local-devices';
-import { DeviceEventEmitter } from 'react-native';
 
-// Don't forget to call DeviceEventEmitter.removeAllListeners() when discovering isn't running.
-// WARNING: DeviceEventEmitter.removeAllListeners will remove all of your listeners. 
-// See the example folder. There is an advanced example how you can create 
-// and remove listeners independent of any other listeners.
-// MAIN BEHAVIOUR: 
-// ...
-  DeviceEventEmitter.addListener('NEW_DEVICE_FOUND', (device) => {
-    console.log(`NEW DEVICE FOUND: ${device.ipAddress}:${device.port}`);
-    // This listener will be activated at the moment when the device has been found.
-    // FORMAT: {ipAddress: "192.168.1.66", port: 70}
-  });
-
-  DeviceEventEmitter.addListener('RESULTS', (devices) => {
-    // ALL OF RESULTS when discovering has been finished.
-    // FORMAT: [{ipAddress: "192.168.1.66", port: 70}, {ipAddress: "192.168.1.69", port: 85}]
-  });
-
-  DeviceEventEmitter.addListener('CHECK', (device) => {
-    // This listener will be activated in that moment when package checking a device.
-    // FORMAT: {ipAddress: "192.168.1.65", port: 70}
-  });
-
-  DeviceEventEmitter.addListener('NO_DEVICES', () => {
-    // This listener will be activated at the end of discovering.
-  });
-
-  DeviceEventEmitter.addListener('NO_PORTS', () => {
-    // This listener will be activated if you don't pass any ports to the package.
-  });
-
-  DeviceEventEmitter.addListener('CONNECTION_ERROR', (error) => {
-    // Handle error messages for each socket connection
-    // console.log(error.message);
-  });
-
-  // Getting local devices which have active socket server on the following ports:
-  FindLocalDevices.getLocalDevices({
-    ports: [70, 85, 1200],
-    timeout: 40
-  });
-
+let scanner = new FindLocalDevices({
+  ports: [8000],
+  onDeviceFound: (device) => {
+    consoe.log('Found device!', device);
+  },
+  onResults: (devices) => {
+    console.log('Finished scanning', devices);
+  },
+  onCheck: (device) => {
+    console.log('Checking IP: ', device.ipAddress);
+  },
+  onFinished: () => {
+    console.log("Done!");
+  },
+  onError: (device) => {
+    // Called when no service found
+    console.log("Nothing found", device);
+  }
+})
   // When the discovering is running, you can cancel that with the following function:
-  FindLocalDevices.cancelDiscovering();
+FindLocalDevices.stop();
 // ...
-```
-
-<h3>Create a listener and remove it</h3>
-
-```js
-  // ...
-  const newDeviceFoundSubscription = DeviceEventEmitter.addListener(
-    NEW_DEVICE_FOUND,
-    (device) => {
-      if (device.ipAddress && device.port) {
-        console.log(device);
-      }
-    }
-  );
-  // ...
-  if(newDeviceFoundSubscription) newDeviceFoundSubscription.remove();
-  // ...
 ```
 
 <h2>Contributing</h2>
