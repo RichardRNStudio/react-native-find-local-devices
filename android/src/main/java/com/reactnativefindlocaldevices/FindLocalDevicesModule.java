@@ -152,10 +152,10 @@ public class FindLocalDevicesModule extends ReactContextBaseJavaModule {
   }
 
   private void sendMapEvent(String eventName, WritableMap params) {
-    reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName, params);
+    reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit("FLD_"+eventName, params);
   }
 
   private void sendArrayEvent(String eventName, WritableArray params) {
-    reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName, params);
+    reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit("FLD_"+eventName, params);
   }
 }
