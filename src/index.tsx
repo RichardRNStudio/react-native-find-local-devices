@@ -5,6 +5,9 @@ class PortScan {
 
   _listeners: Array<any> = [];
 
+  static cancelDiscovering = FindLocalDevices.cancelDiscovering;
+  static getLocalDevices = FindLocalDevices.getLocalDevices;
+
   constructor({
             ports = [],
             timeout = 40,

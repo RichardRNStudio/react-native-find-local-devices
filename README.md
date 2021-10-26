@@ -13,9 +13,10 @@
 <p>You've to add a timeout and an array of ports as parameters. The package will try to create a connection with those ports and return the ip adresses which have successful connection.</p>
 <p>See the example: <a href="https://github.com/RichardRNStudio/react-native-find-local-devices/tree/main/example">https://github.com/RichardRNStudio/react-native-find-local-devices/tree/main/example</a></p>
 <p>NOTICE: It doesn't work with IOS yet. If you can help me in this case please contact me on the following email: info@rnstudio.hu</p>
-<p><i>This package has been written for the PC Controller react-native application as a submodule.</i></p>
-  <a href="https://pccontroller.rnstudio.hu">Visit the PC Controller website</a>
+<p>
+<i>This package has been written for the PC Controller react-native application as a submodule.</i>
 </p>
+<p><a href="https://pccontroller.rnstudio.hu">Visit the PC Controller website</a></p>
 </blockquote>
 
 <h2>Installation</h2>
@@ -34,9 +35,9 @@ npm run example:android
 <h2>Usage</h2>
 
 ```js
-import FindLocalDevices from 'react-native-find-local-devices';
+import PortScanner from 'react-native-find-local-devices';
 
-let scanner = new FindLocalDevices({
+const scanner = new PortScanner({
   ports: [8000],
   onDeviceFound: (device) => {
     consoe.log('Found device!', device);
@@ -56,7 +57,7 @@ let scanner = new FindLocalDevices({
   }
 })
   // When the discovering is running, you can cancel that with the following function:
-FindLocalDevices.stop();
+scanner.stop();
 // ...
 ```
 
