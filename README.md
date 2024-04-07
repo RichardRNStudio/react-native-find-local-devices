@@ -33,6 +33,14 @@ or
 npm install react-native-find-local-devices --save
 ```
 
+
+<h2>Running the example project</h2>
+
+Android
+```sh
+yarn example android
+```
+
 <h2>Usage</h2>
 
 ```ts
