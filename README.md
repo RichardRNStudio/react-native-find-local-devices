@@ -67,6 +67,18 @@ const scanner = new PortScanner({
 
 ```
 
+<h2>Properties of <a href="https://github.com/RichardRNStudio/react-native-find-local-devices/blob/main/src/interfaces/IPortScanner.interface.tsx">PortScanner</a> class</h2>
+
+| Name                         | Type     | Default value                         | Description                                                                                  |
+| ---------------------------- | -------- | ------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `ports`                      | number[] | none, required                        | Array of port numbers.                                                                       |
+| `timeout`                    | number   | 40                                    | Timeout in milisecondum to skip a specific device when it does not respond.                  |
+| `onDeviceFound`              | function | none                                  | Callback function to handle moment when a new device has been found.                         |
+| `onResults`                  | function | none                                  | Callback function to get all of devices which have been found during the progress.           |
+| `onCheck`                    | function | none                                  | Callback function to responds the currently checked device's parameters.                     |
+| `onFinished`                 | function | none                                  | Callback function to notify, scanning has been finished.                                     |
+| `onError`                    | function | none                                  | Callback function to responds any errors during the scanning.                                |
+
 <h2>Contributing</h2>
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
