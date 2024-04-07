@@ -1,13 +1,13 @@
 import { type IDevice } from './IDevice.interface';
 
-declare type PortScannerCallback = (device: IDevice) => void;
+declare type DefaultPortScannerCallback = (device: IDevice) => void;
 
 export interface IPortScanner {
   ports: number[];
   timeout: number;
-  onDeviceFound: PortScannerCallback;
+  onDeviceFound: DefaultPortScannerCallback;
   onResults: (device: IDevice[]) => void;
-  onCheck: PortScannerCallback;
+  onCheck: DefaultPortScannerCallback;
   onFinished: () => void;
-  onError: PortScannerCallback;
+  onError: DefaultPortScannerCallback;
 }
