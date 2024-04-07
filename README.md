@@ -16,12 +16,10 @@
   </a>
 </p>
 
-<blockquote>
 <p>This package allows you detect all devices over your local network with websocket connection.</p>
 <p>You've to add a timeout and an array of ports as parameters. The package will try to create a connection with those ports and return the ip addresses which have successful connection.</p>
 <p>See the example: <a href="https://github.com/RichardRNStudio/react-native-find-local-devices/tree/main/example">https://github.com/RichardRNStudio/react-native-find-local-devices/tree/main/example</a></p>
 <p>NOTICE: It doesn't work with IOS yet. Related ticket: <a href="https://github.com/RichardRNStudio/react-native-find-local-devices/issues/2">IOS support ticket</a></p>
-</blockquote>
 
 <h2>Installation</h2>
 
