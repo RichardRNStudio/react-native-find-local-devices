@@ -1,4 +1,4 @@
-import { IDevice } from './IDevice.interface';
+import { type IDevice } from './IDevice.interface';
 
 declare type PortScannerCallback = (device: IDevice) => void;
 

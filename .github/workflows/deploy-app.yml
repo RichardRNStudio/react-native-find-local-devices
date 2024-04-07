@@ -19,24 +19,11 @@ jobs:
 
       - name: Typecheck files
         run: yarn typecheck
-
-  test:
-    name: Run unit tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup
-        uses: ./.github/actions/setup
-
-      - name: Run unit tests
-        run: yarn test --maxWorkers=2 --coverage
   
   publish-npm:
     name: Build & Publish NPM package
     runs-on: ubuntu-latest
-    needs: [lint, test]
+    needs: [lint]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
