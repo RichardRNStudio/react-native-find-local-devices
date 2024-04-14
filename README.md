@@ -52,18 +52,18 @@ const scanner = new PortScanner({
     onDeviceFound: (device) => {
       console.log('Found device!', device);
     },
-    onResults: (devices) => {
-      console.log('Finished scanning', devices);
+    onFinish: (devices) => {
+      console.log('Finished , devices:', devices);
     },
     onCheck: (device) => {
       console.log('Checking IP: ', device.ipAddress);
     },
-    onFinished: () => {
-      console.log('Done!');
+    onNoDevices: () => {
+      console.log('Finished scanning, no results have been found!');
     },
-    onError: (device) => {
+    onError: (error) => {
       // Called when no service found
-      console.log('Nothing found', device);
+      console.log('Error', error);
     },
   });
 
@@ -80,11 +80,11 @@ const scanner = new PortScanner({
 | Name                         | Type     | Default value                         | Description                                                                                  |
 | ---------------------------- | -------- | ------------------------------------- | -------------------------------------------------------------------------------------------- |
 | `ports`                      | number[] | none, required                        | Array of port numbers.                                                                       |
-| `timeout`                    | number   | 40                                    | Timeout in milisecondum to skip a specific device when it does not respond.                  |
+| `timeout`                    | number   | 40                                    | Timeout in millisecond to skip a specific device when it does not respond.                  |
 | `onDeviceFound`              | function | none                                  | Callback function to handle moment when a new device has been found.                         |
-| `onResults`                  | function | none                                  | Callback function to get all of devices which have been found during the progress.           |
+| `onFinish`                   | function | none                                  | Callback function to get all of devices which have been found during the progress.                                   |
 | `onCheck`                    | function | none                                  | Callback function to responds the currently checked device's parameters.                     |
-| `onFinished`                 | function | none                                  | Callback function to notify, scanning has been finished.                                     |
+| `onNoDevices`                | function | none                                  | Callback function to notify, scanning has been finished, no results have been found.              |
 | `onError`                    | function | none                                  | Callback function to responds any errors during the scanning.                                |
 
 <h2>Contributing</h2>

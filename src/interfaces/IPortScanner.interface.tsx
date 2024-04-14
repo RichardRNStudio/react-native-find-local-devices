@@ -6,8 +6,8 @@ export interface IPortScanner {
   ports: number[];
   timeout: number;
   onDeviceFound: DefaultPortScannerCallback;
-  onResults: (device: IDevice[]) => void;
+  onFinish: (device: IDevice[]) => void;
   onCheck: DefaultPortScannerCallback;
-  onFinished: () => void;
-  onError: DefaultPortScannerCallback;
+  onNoDevices: () => void;
+  onError: (error: string) => void;
 }

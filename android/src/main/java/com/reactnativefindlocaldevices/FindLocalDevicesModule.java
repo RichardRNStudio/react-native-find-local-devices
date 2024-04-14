@@ -88,7 +88,7 @@ public class FindLocalDevicesModule extends ReactContextBaseJavaModule {
       WifiInfo mWifiInfo = mWifiManager.getConnectionInfo();
       String subnet = getSubnetAddress(mWifiManager.getDhcpInfo().gateway);
       for(int j=0; j<this.Ports.size(); j++) {
-        for (int i=1; i<255; i++) {
+        for (int i=1; i<=255; i++) {
           if(isCancelled()) break;
           String host = subnet + "." + i;
           Device device = new Device(host, this.Ports.getInt(j));
