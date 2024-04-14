@@ -53,17 +53,17 @@ const scanner = new PortScanner({
       console.log('Found device!', device);
     },
     onFinish: (devices) => {
-      console.log('Finished scanning', devices);
+      console.log('Finished , devices:', devices);
     },
     onCheck: (device) => {
       console.log('Checking IP: ', device.ipAddress);
     },
     onNoDevices: () => {
-      console.log('Done!');
+      console.log('Finished scanning, no results have been found!');
     },
-    onError: (device) => {
+    onError: (error) => {
       // Called when no service found
-      console.log('Nothing found', device);
+      console.log('Error', error);
     },
   });
 
