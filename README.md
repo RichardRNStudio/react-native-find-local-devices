@@ -75,6 +75,8 @@ const scanner = new PortScanner({
 
 ```
 
+Advanced example with state management: https://github.com/RichardRNStudio/react-native-find-local-devices/blob/main/example/src/App.tsx
+
 <h2>Properties of <a href="https://github.com/RichardRNStudio/react-native-find-local-devices/blob/main/src/interfaces/IPortScanner.interface.tsx">PortScanner</a> class</h2>
 
 | Name                         | Type     | Default value                         | Description                                                                                  |
