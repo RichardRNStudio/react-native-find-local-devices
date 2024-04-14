@@ -1,6 +1,6 @@
-import React from 'react';
-import { Button, StyleSheet, View } from 'react-native';
-import PortScanner from 'react-native-find-local-devices';
+import React, { useEffect, useState } from 'react';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import PortScanner, { type IDevice } from 'react-native-find-local-devices';
 
 const styles = StyleSheet.create({
   container: {
@@ -9,63 +9,113 @@ const styles = StyleSheet.create({
     height: '100%',
     maxHeight: '100%',
     minHeight: '100%',
+    marginTop: 10,
   },
-  actionContainer: {
-    marginTop: 20,
-    flex: 1,
-    justifyContent: 'center',
-    height: '30%',
-    minHeight: '30%',
-    maxHeight: '30%',
-  },
-  checkingContainer: {
+  wrapper: {
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-around',
+    marginTop: 10,
+    minHeight: 20,
+  },
+  warning: {
+    textAlign: 'center',
+    color: 'red',
+    fontSize: 20,
+    marginBottom: 20,
   },
 });
 
 export default function App() {
-  const scanner = new PortScanner({
-    timeout: 40,
-    ports: [50001],
-    onDeviceFound: (device) => {
-      console.log('Found device!', device);
-    },
-    onResults: (devices) => {
-      console.log('Finished scanning', devices);
-    },
-    onCheck: (device) => {
-      console.log('Checking IP: ', device.ipAddress, device.port);
-    },
-    onFinished: () => {
-      console.log('Done!');
-    },
-    onError: (device) => {
-      // Called when no service found
-      console.log('Nothing found', device);
-    },
-  });
+  const [deviceFound, setDeviceFound] = useState<IDevice[]>([]);
+  const [isFinished, setIsFinished] = useState<boolean>(false);
+  const [scanner, setScanner] = useState<PortScanner | null>(null);
+  const [checkedDevice, setCheckedDevice] = useState<IDevice | null>(null);
+
+  const init = () => {
+    setScanner(
+      new PortScanner({
+        timeout: 40,
+        ports: [50001],
+        onDeviceFound: (device) => {
+          console.log('Found device!', device);
+          setDeviceFound((prev) => [...prev, device]);
+        },
+        onFinish: (devices) => {
+          console.log('Finished scanning', devices);
+          setIsFinished(true);
+          setCheckedDevice(null);
+        },
+        onCheck: (device) => {
+          console.log('Checking IP: ', device.ipAddress, device.port);
+          setCheckedDevice(device);
+        },
+        onNoDevices: () => {
+          console.log('Done without results!');
+          setIsFinished(true);
+          setCheckedDevice(null);
+        },
+        onError: (error) => {
+          // Handle error messages for each socket connection
+          console.log('Error', error);
+        },
+      })
+    );
+  };
+
+  useEffect(() => {
+    init();
+  }, []);
 
   const start = () => {
-    scanner.start();
+    console.log('init');
+    scanner?.start();
   };
 
   const stop = () => {
-    scanner.stop();
+    scanner?.stop();
+    setCheckedDevice(null);
+    setIsFinished(false);
+    setDeviceFound([]);
+    setScanner(null);
+    init();
   };
 
   return (
     <View style={styles.container}>
-      <View style={styles.actionContainer}>
-        <View style={styles.checkingContainer}>
+      <Text style={styles.warning}>Wi-Fi connection is required!</Text>
+      {!checkedDevice && (
+        <View style={styles.wrapper}>
           <Button title="Discover devices" color="steelblue" onPress={start} />
         </View>
-        <View style={styles.checkingContainer}>
+      )}
+      {checkedDevice && (
+        <View style={styles.wrapper}>
+          <Text>
+            Under checking: {checkedDevice.ipAddress}:{checkedDevice.port}
+          </Text>
+        </View>
+      )}
+      {deviceFound.length > 0 && (
+        <View style={styles.wrapper}>
+          {deviceFound.map((device) => (
+            <Text key={device.ipAddress}>
+              New device found: {device.ipAddress}:{device.port}
+            </Text>
+          ))}
+        </View>
+      )}
+      {isFinished && (
+        <View style={styles.wrapper}>
+          <Text>Finished scanning!</Text>
+        </View>
+      )}
+      {checkedDevice && (
+        <View style={styles.wrapper}>
           <Button title="Cancel discovering" color="red" onPress={stop} />
         </View>
-      </View>
+      )}
     </View>
   );
 }
