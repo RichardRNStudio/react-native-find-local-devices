@@ -36,7 +36,11 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "local-network",
+    "network-discovery",
+    "websocket-connection",
+    "portscanning"
   ],
   "repository": {
     "type": "git",
