@@ -4,6 +4,7 @@
 [![build](https://github.com/RichardRNStudio/react-native-find-local-devices/actions/workflows/build-app.yml/badge.svg?branch=main)](https://github.com/RichardRNStudio/react-native-find-local-devices/actions/workflows/build-app.yml)
 [![platform](https://img.shields.io/badge/platform-Android-yellow)](https://github.com/RichardRNStudio/react-native-find-local-devices)
 [![NPM total downloads](https://img.shields.io/npm/d18m/react-native-find-local-devices.svg?style=flat)](https://npmcharts.com/compare/react-native-find-local-devices?minimal=true)
+[![react-native-find-local-devices](https://snyk.io/advisor/npm-package/react-native-find-local-devices/badge.svg)](https://snyk.io/advisor/npm-package/react-native-find-local-devices)
 [![license](https://img.shields.io/badge/license-MIT-green)](https://github.com/RichardRNStudio/react-native-find-local-devices/blob/main/LICENSE)
 
 
