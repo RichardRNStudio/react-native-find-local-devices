@@ -1,4 +1,4 @@
 export interface IDevice {
-  ipAddress: string;
+  ip: string;
   port: number;
 }

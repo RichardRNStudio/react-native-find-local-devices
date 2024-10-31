@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { Button, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import PortScanner, { type IDevice } from 'react-native-find-local-devices';
 
 const styles = StyleSheet.create({
@@ -30,46 +30,40 @@ const styles = StyleSheet.create({
 export default function App() {
   const [deviceFound, setDeviceFound] = useState<IDevice[]>([]);
   const [isFinished, setIsFinished] = useState<boolean>(false);
-  const [scanner, setScanner] = useState<PortScanner | null>(null);
   const [checkedDevice, setCheckedDevice] = useState<IDevice | null>(null);
 
-  const init = () => {
-    setScanner(
-      new PortScanner({
-        timeout: 40,
-        ports: [50001],
-        onDeviceFound: (device) => {
-          console.log('Found device!', device);
-          setDeviceFound((prev) => [...prev, device]);
-        },
-        onFinish: (devices) => {
-          console.log('Finished scanning', devices);
-          setIsFinished(true);
-          setCheckedDevice(null);
-        },
-        onCheck: (device) => {
-          console.log('Checking IP: ', device.ipAddress, device.port);
-          setCheckedDevice(device);
-        },
-        onNoDevices: () => {
-          console.log('Done without results!');
-          setIsFinished(true);
-          setCheckedDevice(null);
-        },
-        onError: (error) => {
-          // Handle error messages for each socket connection
-          console.log('Error', error);
-        },
-      })
-    );
-  };
-
-  useEffect(() => {
-    init();
-  }, []);
+  const scanner = new PortScanner({
+    timeout: 40,
+    ports: [78999],
+    onDeviceFound: (device) => {
+      console.log('Found device!', device);
+      setDeviceFound((prev) => [...prev, device]);
+    },
+    onFinish: (devices) => {
+      console.log('Finished scanning', devices);
+      scanner.stop();
+      setIsFinished(true);
+      setCheckedDevice(null);
+    },
+    onCheck: (device) => {
+      console.log('Checking IP: ', device.ip, device.port);
+      setCheckedDevice(device);
+    },
+    onNoDevices: () => {
+      console.log('Done without results!');
+      setIsFinished(true);
+      setCheckedDevice(null);
+    },
+    onError: (error) => {
+      // Handle error messages for each socket connection
+      console.log('Error', error);
+    },
+  });
 
   const start = () => {
     console.log('init');
+    setDeviceFound([]);
+    setIsFinished(false);
     scanner?.start();
   };
 
@@ -78,12 +72,10 @@ export default function App() {
     setCheckedDevice(null);
     setIsFinished(false);
     setDeviceFound([]);
-    setScanner(null);
-    init();
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.warning}>Wi-Fi connection is required!</Text>
       {!checkedDevice && (
         <View style={styles.wrapper}>
@@ -93,15 +85,15 @@ export default function App() {
       {checkedDevice && (
         <View style={styles.wrapper}>
           <Text>
-            Under checking: {checkedDevice.ipAddress}:{checkedDevice.port}
+            Under checking: {checkedDevice.ip}:{checkedDevice.port}
           </Text>
         </View>
       )}
       {deviceFound.length > 0 && (
         <View style={styles.wrapper}>
           {deviceFound.map((device) => (
-            <Text key={device.ipAddress}>
-              New device found: {device.ipAddress}:{device.port}
+            <Text key={device.ip}>
+              New device found: {device.ip}:{device.port}
             </Text>
           ))}
         </View>
@@ -116,6 +108,6 @@ export default function App() {
           <Button title="Cancel discovering" color="red" onPress={stop} />
         </View>
       )}
-    </View>
+    </SafeAreaView>
   );
 }
