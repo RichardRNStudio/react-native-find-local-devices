@@ -1,6 +1,6 @@
 {
   "name": "react-native-find-local-devices",
-  "version": "2.0.12",
+  "version": "2.0.13",
   "description": "It can be helpful when you try to get a list of your local devices over WiFi with websocket connection.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
