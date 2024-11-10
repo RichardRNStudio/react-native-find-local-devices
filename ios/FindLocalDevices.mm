@@ -7,6 +7,7 @@
 #import <sys/socket.h>
 #import <ifaddrs.h>
 #import <arpa/inet.h>
+#include <fcntl.h>
 
 @implementation FindLocalDevices  {
   BOOL isDiscovering;
@@ -65,27 +66,29 @@ RCT_EXPORT_METHOD(getLocalDevices:(NSDictionary *)params) {
     NSMutableArray *devices = [NSMutableArray new];
     dispatch_group_t group = dispatch_group_create();
 
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(10); // Limit to 10 concurrent scans
+
     for (NSNumber *port in ports) {
         int portInt = [port intValue];
-
         for (int i = 1; i <= 255 && isDiscovering; i++) {
             NSString *host = [NSString stringWithFormat:@"%@.%d", subnet, i];
 
-            // Enter the dispatch group before starting the async operation
+            // Enter the dispatch group and wait for the semaphore
+            dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
             dispatch_group_enter(group);
 
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSDictionary *deviceInfo = @{@"ip": host, @"port": @(portInt)};
+                [self sendEventWithName:@"FLD_CHECK" body:deviceInfo];
                 BOOL isAvailable = [self socketIsAvailableForHost:host port:portInt timeout:timeout];
-
                 if (isAvailable) {
                     NSDictionary *deviceInfo = @{@"ip": host, @"port": @(portInt)};
+                    [devices addObject:deviceInfo];
                     if (hasListeners) {
                         [self sendEventWithName:@"FLD_NEW_DEVICE_FOUND" body:deviceInfo];
                     }
-                    [devices addObject:deviceInfo];
                 }
-
-                // Leave the dispatch group after the check
+                dispatch_semaphore_signal(semaphore); // Release semaphore
                 dispatch_group_leave(group);
             });
         }
@@ -134,41 +137,73 @@ RCT_EXPORT_METHOD(getLocalDevices:(NSDictionary *)params) {
     return subnet;
 }
 
+void setSocketTimeout(int sock, long milliseconds) {
+  struct timeval timeout;
+  timeout.tv_sec = milliseconds / 1000;                  // Convert to seconds
+  timeout.tv_usec = (milliseconds % 1000) * 1000;        // Convert remainder to microseconds
+
+  // Set receive timeout
+  if (setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, (const char*)&timeout, sizeof(timeout)) < 0) {
+      throw std::runtime_error("Failed to set receive timeout");
+  }
+
+  // Set send timeout
+  if (setsockopt(sock, SOL_SOCKET, SO_SNDTIMEO, (const char*)&timeout, sizeof(timeout)) < 0) {
+      throw std::runtime_error("Failed to set send timeout");
+  }
+}
+
 - (BOOL)socketIsAvailableForHost:(NSString *)host port:(int)port timeout:(int)timeout {
-  // Create a socket
   int sock = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
   if (sock < 0) {
     RCTLogError(@"Failed to create socket.");
     return NO;
   }
 
-  // Define socket address
+  // Set the socket to non-blocking mode
+  int flags = fcntl(sock, F_GETFL, 0);
+  if (flags == -1 || fcntl(sock, F_SETFL, flags | O_NONBLOCK) == -1) {
+    close(sock);
+    return NO;
+  }
+
   struct sockaddr_in addr;
   addr.sin_family = AF_INET;
   addr.sin_port = htons(port);
   inet_pton(AF_INET, [host UTF8String], &addr.sin_addr);
 
-  // Configure the timeout in microseconds (milliseconds * 1000)
-  struct timeval tv;
-  tv.tv_sec = timeout / 1000;
-  tv.tv_usec = (timeout % 1000) * 1000;
-
-  setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, (const char*)&tv, sizeof(tv));
-  setsockopt(sock, SOL_SOCKET, SO_SNDTIMEO, (const char*)&tv, sizeof(tv));
-
-  // Attempt to connect
   int result = connect(sock, (struct sockaddr *)&addr, sizeof(addr));
-  close(sock);
 
   if (result == 0) {
+    close(sock);
+    return YES; // Connected successfully
+  } else if (errno != EINPROGRESS) {
+    close(sock);
+    return NO; // Connection failed immediately for non-timeout reasons
+  }
+
+  // Use select() to wait for the socket to become writable within the timeout
+  fd_set writefds;
+  struct timeval tv;
+  tv.tv_sec = timeout / 1000;  // Seconds
+  tv.tv_usec = (timeout % 1000) * 1000;  // Microseconds
+
+  FD_ZERO(&writefds);
+  FD_SET(sock, &writefds);
+
+  int selectResult = select(sock + 1, NULL, &writefds, NULL, &tv);
+  close(sock);
+
+  if (selectResult > 0 && FD_ISSET(sock, &writefds)) {
+    // The connection attempt was successful
     return YES;
   } else {
+    // Report connection error if listeners are active
     if (hasListeners) {
-      RCTLogInfo(@"FindLocalDevices: No open port at %@:%d within %d ms timeout", host, port, timeout);
       NSDictionary *errorInfo = @{@"ip": host, @"port": @(port)};
       [self sendEventWithName:@"FLD_CONNECTION_ERROR" body:errorInfo];
     }
-    return NO;
+    return NO; // Connection failed or timed out
   }
 }
 
