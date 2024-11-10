@@ -911,7 +911,7 @@ PODS:
   - React-Mapbuffer (0.73.6):
     - glog
     - React-debug
-  - react-native-find-local-devices (2.0.11):
+  - react-native-find-local-devices (2.0.12):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
@@ -1308,7 +1308,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 85583ef014ce53d731a98c66a0e24496f7a83066
   React-logger: 3eb80a977f0d9669468ef641a5e1fabbc50a09ec
   React-Mapbuffer: 84ea43c6c6232049135b1550b8c60b2faac19fab
-  react-native-find-local-devices: 6f376c462282b0cfa6ec6383b1a6210400ee55b5
+  react-native-find-local-devices: c18479978549629f1a6ca878f27b75efd4906a14
   React-nativeconfig: b4d4e9901d4cabb57be63053fd2aa6086eb3c85f
   React-NativeModulesApple: ae99dc0e80c9027f54572c45635449fbdc36e4f1
   React-perflogger: 5f49905de275bac07ac7ea7f575a70611fa988f2
@@ -1334,4 +1334,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 2b0d399bfd4ebfbe27ac21cd2e6de729af603252
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2
