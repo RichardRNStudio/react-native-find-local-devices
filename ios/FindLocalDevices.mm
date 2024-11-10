@@ -172,41 +172,47 @@ void setSocketTimeout(int sock, long milliseconds) {
   addr.sin_port = htons(port);
   inet_pton(AF_INET, [host UTF8String], &addr.sin_addr);
 
+  // Start the connection
   int result = connect(sock, (struct sockaddr *)&addr, sizeof(addr));
 
+  // If connect() returns 0, the connection was established immediately
   if (result == 0) {
     close(sock);
-    return YES; // Connected successfully
-  } else if (errno != EINPROGRESS) {
-    close(sock);
-    return NO; // Connection failed immediately for non-timeout reasons
+    return YES; // Port is open and reachable
   }
 
-  // Use select() to wait for the socket to become writable within the timeout
+  // If connect() returns -1, check if it's due to EINPROGRESS (indicating non-blocking in progress)
+  if (result < 0 && errno != EINPROGRESS) {
+    close(sock);
+    return NO; // Connection failed for reasons other than timeout
+  }
+
+  // Set up the file descriptor set and timeout for select()
   fd_set writefds;
   struct timeval tv;
-  tv.tv_sec = timeout / 1000;  // Seconds
-  tv.tv_usec = (timeout % 1000) * 1000;  // Microseconds
+  tv.tv_sec = timeout / 1000;  // Convert milliseconds to seconds
+  tv.tv_usec = (timeout % 1000) * 1000;  // Convert remainder to microseconds
 
   FD_ZERO(&writefds);
   FD_SET(sock, &writefds);
 
+  // Wait for the socket to be writable, indicating a successful connection
   int selectResult = select(sock + 1, NULL, &writefds, NULL, &tv);
-  close(sock);
-
   if (selectResult > 0 && FD_ISSET(sock, &writefds)) {
-    // The connection attempt was successful
-    return YES;
-  } else {
-    // Report connection error if listeners are active
-    if (hasListeners) {
-      NSDictionary *errorInfo = @{@"ip": host, @"port": @(port)};
-      [self sendEventWithName:@"FLD_CONNECTION_ERROR" body:errorInfo];
-    }
-    return NO; // Connection failed or timed out
-  }
-}
+    int so_error;
+    socklen_t len = sizeof(so_error);
+    getsockopt(sock, SOL_SOCKET, SO_ERROR, &so_error, &len);
 
+    if (so_error == 0) {
+      close(sock);
+      return YES; // Port is open
+    }
+  }
+
+  // Connection failed or timed out
+  close(sock);
+  return NO;
+}
 
 RCT_EXPORT_METHOD(cancelDiscovering) {
   isDiscovering = NO;  // Set flag to NO to cancel discovery
