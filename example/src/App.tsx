@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
     height: '100%',
     maxHeight: '100%',
     minHeight: '100%',
-    marginTop: 10,
   },
   wrapper: {
     flex: 1,
@@ -23,7 +22,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'red',
     fontSize: 20,
-    marginBottom: 20,
   },
 });
 
@@ -68,17 +66,22 @@ export default function App() {
     init();
   }, []);
 
+  const reset = () => {
+    setCheckedDevice(null);
+    setIsFinished(false);
+    setDeviceFound([]);
+    setScanner(null);
+  };
+
   const start = () => {
     console.log('init');
+    reset();
     scanner?.start();
   };
 
   const stop = () => {
     scanner?.stop();
-    setCheckedDevice(null);
-    setIsFinished(false);
-    setDeviceFound([]);
-    setScanner(null);
+    reset();
     init();
   };
 
